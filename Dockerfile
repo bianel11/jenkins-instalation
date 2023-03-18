@@ -15,6 +15,9 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io && \
     curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose && \
+    curl -O https://releases.hashicorp.com/terraform/1.4.2/terraform_1.4.2_linux_amd64.zip && \
+    unzip terraform_1.4.2_linux_amd64.zip && \
+    mv terraform /usr/local/bin/
 
 USER jenkins
